@@ -4,7 +4,7 @@ import { simpleCalculator, Action } from './index';
 const testCases = [
   { a: 1, b: 2, action: Action.Add, expected: 3 },
   { a: 2, b: 2, action: Action.Add, expected: 4 },
-  { a: 3, b: 2, action: Action.Add, expected: 5 },
+  { a: 3, b: -2, action: Action.Add, expected: 1 },
   { a: null, b: 2, action: Action.Add, expected: null },
   { a: '5', b: 2, action: Action.Add, expected: null },
   { a: 10, b: 34, action: Action.Subtract, expected: -24 },
@@ -20,7 +20,7 @@ const testCases = [
   { a: 9, b: 3, action: Action.Divide, expected: 3 },
   { a: 0, b: 99, action: Action.Divide, expected: 0 },
   { a: 140, b: -10, action: Action.Divide, expected: -14 },
-  { a: null, b: 2, action: Action.Divide, expected: null },
+  { a: 2, b: null, action: Action.Divide, expected: null },
   { a: '5', b: '2', action: Action.Divide, expected: null },
   { a: 0, b: 99, action: Action.Exponentiate, expected: 0 },
   { a: 1, b: 99, action: Action.Exponentiate, expected: 1 },
@@ -29,6 +29,10 @@ const testCases = [
   { a: 2, b: -2, action: Action.Exponentiate, expected: 0.25 },
   { a: null, b: 2, action: Action.Exponentiate, expected: null },
   { a: '5', b: '2', action: Action.Exponentiate, expected: null },
+  { a: 3, b: -2, action: '//', expected: null },
+  { a: 5, b: 2, action: '=', expected: null },
+  { a: 5, b: 2, action: null, expected: null },
+  { a: 5, b: 2, action: ']', expected: null },
 ];
 
 describe('simpleCalculator', () => {
